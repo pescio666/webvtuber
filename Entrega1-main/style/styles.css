@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(254, 250, 249);
+}
+
+p1 {
+    color: rgb(104, 59, 48);
+}
+
+imagen1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+
+div.parrafo1{
+
+    float: left;
+    margin-left: 100px;
+    
+
+}
+
+div.imagen2{
+    float: right;
+    margin-right: 300px ;
+}
+
+div.parrafo2{
+    float: left;
+    margin-left: 200px;
+    
+}
+
+div.icon1{
+    float: right;
+    
+}
+
