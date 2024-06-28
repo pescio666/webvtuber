@@ -1,0 +1,430 @@
+/* Base e index */
+
+body > *{
+    background-color: #F6F4F3;
+    font-family: 'Raleway', sans-serif;
+}
+
+#nav-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+imagen1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#nav-head {
+    margin: 0px;
+}
+
+#nav-head > .nav-title{
+    font-family: 'Raleway', sans-serif;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.nav-item > .nav-link{
+    font-family: 'Raleway', sans-serif;
+    font-size: large;
+    font-weight: 100;
+}
+
+.nav-item > .nav-link:hover {
+    color: #7a4839;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.nav-item , .nav-link:active {
+    color: #7a4839;
+    font-weight: bold;
+}
+
+div.parrafo1{
+
+    float: left;
+    margin-left: 100px;
+    
+
+}
+
+div.imagen2{
+    float: right;
+    margin-right: 300px ;
+}
+
+div.parrafo2{
+    float: left;
+    margin-left: 200px;
+    
+}
+
+div.icon1{
+    float: right;
+    
+}
+
+#usuario {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    align-items: center;
+    color: #000000;
+}
+
+#usuario>a {
+    color: #000000;
+    display: block;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+#usuario>a:hover {
+    background-color: #b67b1cb3;
+    transition-duration: 0.4s;
+}
+
+#usuario>a:focus {
+    background-color: #81540be2;
+    border-style: hidden;
+}
+
+/* Fin base e index */
+
+/* Tienda css */
+
+.catalogo {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+#barra-arriba{
+    background-color: #724030;
+    height: 2px;
+    opacity: .40;
+    margin: 0rem 1rem 3rem 1rem;
+}
+
+#barra-abajo{
+    background-color: #724030;
+    height: 2px;
+    opacity: .40;
+    margin: 3rem 3rem 0rem 3rem;
+}
+
+.titulo-tienda {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-style: oblique;
+    font-weight: 600;
+    margin: 40px 0px 10px 0px;
+    color: #35211a;
+}
+
+.titulo-tienda > .parrafo {
+    margin: 5px 450px 5px 450px;
+    /* border: solid 1px red; */
+}
+
+.titulo-tienda > .parrafo > p {
+    margin: 10px 0px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 15%;
+    border: 2px #ffffff0f solid;
+    background-color: #ffffff;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.detalle {
+    margin-top: 2vh ;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.imagen-producto{
+    width: 200px;
+    height: 300px;
+}
+
+.cant-precio {
+    display: flex;
+    margin-left: 5vh;
+    justify-content: first baseline;
+}
+
+.cantidad, .precio {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.precio {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.3rem;
+    font-weight: 650;
+}
+
+.agregar>a {
+    background-color: #065724de;
+    color: #ffffff;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: end;
+    text-align: center;
+    column-gap: 10px;
+    padding: 5px 10px;
+    margin: 10px 0px;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition-duration: 0.4s;
+}
+
+.agregar>a:hover {
+    background-color: #b67b1cb3;
+    transition-duration: 0.4s;
+}
+
+.agregar>a:focus {
+    background-color: #81540be2;
+    border-style: hidden;
+}
+
+/* Fin tienda css */
+
+/* Carrito css */
+
+.Carro-compra{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    justify-content: space-evenly;
+    row-gap: 20px;
+}
+
+table {
+    width: 90%;
+}
+
+thead {
+    background-color: #269aa2;
+    height: 3em;
+    text-align: center;
+}
+
+th {
+    padding: 10px 0px;
+    color: #d4ffdb;
+}
+
+td {
+    text-align: center;
+}
+
+td>img {
+    height: 100px;
+}
+
+#Mensaje-carrito {
+    text-align: center;
+    padding: 45px 0px 0px 0px;
+    font-size: large;
+    color: #4d8656;
+}
+
+.comprar {
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comprar>a {
+    line-height: 50px;
+    background-color: #269aa2;
+    color: #d4ffdb;
+    height: 50px;
+    width: 120px;
+    text-decoration: none;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+
+.comprar>a:hover {
+    background-color: #b67b1cb3;
+    transition-duration: 0.5s;
+}
+
+/* Fin carrito css */
+
+/* Registro cs */
+
+.tituloI, .tituloR{
+    margin: 1em 0em;
+    font-size: 2.6rem;
+    text-align: center;
+    color: #4d8656;
+}
+
+#login1, #registro1 {
+    width: 100%;
+    padding: 1em 30em;
+    font-size: 1.2rem;
+    /* margin: 2vh 60vh; */
+    font-weight: 300;
+}
+
+#iniciar1, #confirmar1 {
+    margin: 1em 0em;
+    width: 100%;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.VinculoRegistro{
+    display: flex;
+    justify-content: center;
+    font-size: 1.1em;
+}
+
+.VinculoRegistro {
+    outline: none;
+    text-decoration: none;
+}
+
+.VinculoRegistro:link {
+    color: #0603c0;
+}
+
+.VinculoRegistro:visited {
+    color: #4207a0;
+}
+
+.VinculoRegistro:focus {
+    color: #dd1717;
+}
+
+.VinculoRegistro:hover {
+    color: #dd1717;
+}
+
+.VinculoRegistro:active {
+    color: #4207a0;
+}
+
+/* Fin registro cs */
+
+/* Talento css */
+
+hr{
+    background-color: #724030;
+    height: 2px;
+}
+
+.titulo-talentos{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-style: oblique;
+    font-weight: 600;
+    margin: 40px 0px 10px 0px;
+    color: #000000;
+}
+
+main > .container > .row > .col > p {
+    padding: 10px 200px 10px 200px;
+    margin: 0px 0px 50px 0px;
+}
+
+/*-----Estilos de materialize para el carrusel-----*/
+.col .carousel{
+    display: block;
+    position: sticky;
+}
+
+.carousel {
+    min-height: 450px;
+    margin-bottom: 100px;
+}
+
+.carousel-text {
+    position: absolute;
+    font-size: 30px;
+    bottom: -80px;
+    left: 0;
+    width: 100%;
+    color: #000;
+    padding: 15px;
+    text-align: center;
+}
+
+.carousel .carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    /*background: #ccc;*/
+    width: 400px;
+    height: 400px;
+    opacity: 0.333333;
+    visibility: visible;
+    transform: translateY(50px) translateX(400px) ;
+
+}
+
+/*-----Acceso a la imagen del carrusel para ponerla como fondo -----*/
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /*-----Esto es para poner la imagen al fondo y no cubra el texto-----*/
+    border-radius: 500px;
+    border-style: dashed;
+}
+
+/* Fin de talento css */
+
+
