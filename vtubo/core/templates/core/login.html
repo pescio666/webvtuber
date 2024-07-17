@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <form action="" method="post" id="login1">
+        <h1 class="tituloI">Login</h1>
+        {% csrf_token %}
+        {{ form | crispy }}
+        <p>No tienes una cuenta? <a class="VinculoRegistro" href="{% url 'registro' %}">Inscríbite aquí</a></p>
+        <button id="iniciar1" type="submit" class="btn btn-success">Ingresar</button>
+    </form>
+</section>
+
+{% endblock %}

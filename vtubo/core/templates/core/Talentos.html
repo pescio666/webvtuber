@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+  <section class="Info-talento">
+    <h1 class="titulo-talento">
+      TALENTOS<div class="parrafo-talento">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in earum rerum asperiores accusantium, cum pariatur autem eos, enim, omnis nam. Doloremque exercitationem non corrupti. Dolores quibusdam commodi doloremque in!</p>
+      </div>
+      <hr id="barra-abajo" />
+    </h1>
+    <div class="contenedor-info-talento">
+      {% for talento in talentos %}
+        <div class="talento">
+          <a class="imagen-talento border-color-{{ forloop.counter0 }} " href="{% url 'talentoVista' talento.id %}"><img src="{{ talento.imagen.url }}" alt="" /></a>
+          <div class="talento-text">
+            <a href="{% url 'talentoVista' talento.id %}"><h2>{{ talento.nombre }}</h2></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

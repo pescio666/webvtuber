@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProyectVtuber</title>
+    <link rel="icon" href="{% static 'images/OIG4.ico' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    {% block head %}
+
+    {% endblock %}
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container" id="nav-head">
+          <a class="nav-title navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/icons8_lotus_50px_1.png' %}" alt="" /> CHOOSE ME!</a>
+        </div>
+        <div class="barra-opciones navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'talentos' %}">TALENTOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'tienda' %}">TIENDA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Carrito' %}">CARRITO</a>
+            </li>
+            <div id="usuario">
+              {% if user.is_authenticated %}
+                {% if not user.is_staff %}
+                  <div class="opcion-multiple">
+                    <button class="btn-user dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</button>
+                    <ul class="contenido-opcion" aria-labelledby="dropdownMenuButton">
+                      <li>
+                        <a class="opcion-usuario" href="{% url 'actualizar_usuario' %}">Modificar Usuario</a>
+                        <a class="opcion-usuario" href="{% url 'historial' %}">Mis compras</a>
+                        <a class="opcion-usuario" href="{% url 'logout' %}">Salir</a>
+                      </li>
+                    </ul>
+                  </div>
+                {% endif %}
+                {% if user.is_staff %}
+                  <div class="opcion-multiple">
+                    <button class="btn-user btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</button>
+                    <ul class="contenido-opcion" aria-labelledby="dropdownMenuButton">
+                      <li>
+                        <a class="opcion-usuario" href="{% url 'historial_vista_admin' %}">Historial de compras</a>
+                        <a class="opcion-usuario" href="{% url 'logout' %}">Salir</a>
+                      </li>
+                    </ul>
+                  </div>
+                {% endif %}
+              {% else %}
+                <a class="logeo" href="{% url 'login' %}">LOGIN</a>
+              {% endif %}
+            </div>
+          </ul>
+        </div>
+      </nav>
+      <hr id="barra-arriba" />
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Inicio footer -->
+
+    <footer class="pie-pagina" id="pie">
+      <section class="contactos-info">
+        <div class="info-sitio">
+          <h1>LEGAL</h1>
+          <p>LOREM MAGNA ALIQUA. UT LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT</p>
+          <h1>ABOUT</h1>
+          <p>LOREM MAGNA ALIQUA. UT LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT</p>
+        </div>
+
+        <div class="follow-me">
+          <p1>CONTACTO</p1>
+          <p2>LOREM MAGNA ALIQUA. UT LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT</p2>
+          <div class="redes-follow">
+            <p3>REDES</p3>
+            <a href="https://www.youtube.com/"><img src="{% static 'images/icons8-youtube-150.png' %}" alt="" /></a>
+            <a class="icon-twitch" href="https://www.twitch.tv/"><img src="{% static 'images/icons8-twitch-60.png' %}" alt="" /></a>
+            <a href="https://www.instagram.com/"><img src="{% static 'images/icons8-instagram-60.png' %}" alt="" /></a>
+            <a href="https://x.com/?lang=es"><img src="{% static 'images/icons8-twitter-150.png' %}" alt="" /></a>
+          </div>
+        </div>
+      </section>
+      <!-- Copyright -->
+      <div class="text-body">
+        <p>© 2020 Copyright:</p>
+        <a href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>

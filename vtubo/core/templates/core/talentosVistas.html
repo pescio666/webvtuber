@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="info-talento">
+    <div class="vista-talento">
+      <img src="{{ talento.imagen.url }}" alt="{{ talento.nombre }}" />
+    </div>
+    <div class="detalle-talento">
+      <p1>{{ talento.tipo }}</p1>
+      <p2>{{ talento.nombre }}</p2>
+      <p3>Oshi mark:</p3>
+      <p4>Edad:</p4>
+      <p5>Altura:</p5>
+      <p6>{{ talento.descripcion }}</p6>
+      <div class="redes">
+        <a href="https://www.youtube.com/"><img src="{% static 'images/icons8-youtube-150.png' %}" alt=""></a>
+        <a class="icon-twitch" href="https://www.twitch.tv/"><img src="{% static 'images/icons8-twitch-60.png' %}" alt=""></a>
+        <a href="https://www.instagram.com/"><img src="{% static 'images/icons8-instagram-60.png' %}" alt=""></a>
+        <a href="https://x.com/?lang=es"><img src="{% static 'images/icons8-twitter-150.png' %}" alt=""></a>
+        <a href="https://discord.com/"><img src="{% static 'images/icons8-discord-60.png' %}" alt=""></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

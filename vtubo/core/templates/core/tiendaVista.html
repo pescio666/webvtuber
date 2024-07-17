@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="info-producto">
+    <div class="vista-producto">
+      <img src="{{ producto.imagen.url }}" alt="" />
+    </div>
+    <div class="detalle-producto">
+      <p1>{{ producto.detalle }}</p1>
+      <p2>{{ producto.descripcion_producto }}</p2>
+      <p3>${{ producto.precio }}</p3>
+      <div class="agregar-vista-individual">
+        <a href="{% url 'addtocar' producto.codigo %}">AGREGAR AL CARRITO</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

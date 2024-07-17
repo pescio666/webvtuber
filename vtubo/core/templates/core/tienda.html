@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+  <section class="catalogo">
+    <h1 class="titulo-tienda">
+      TIENDA<div class="parrafo-tienda">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in earum rerum asperiores accusantium, cum pariatur autem eos, enim, omnis nam. Doloremque exercitationem non corrupti. Dolores quibusdam commodi doloremque in!</p>
+      </div>
+      <hr id="barra-abajo" />
+    </h1>
+
+    {% for producto in productos %}
+      <div class="producto">
+        <div class="imagen-contenedor">
+          <img class="imagen-producto" src="{{ producto.imagen.url }}" alt="" />
+          <a href="{% url 'tiendaVista' producto.codigo %}"><img class="ico-plus" src="{% static 'images/icons8-plus-70.png' %}" alt="" /></a>
+        </div>
+        <div class="detalle">
+          <span>{{ producto.detalle }}</span>
+        </div>
+        <div class="cant-precio">
+          {% comment %} <div class="cantidad">
+            <span>quedan</span>
+            <span>{{ producto.stock }}</span>
+          </div> {% endcomment %}
+          <div class="precio">
+            <span>${{ producto.precio }}</span>
+          </div>
+        </div>
+        <div class="agregar">
+          <a href="{% url 'addtocar' producto.codigo %}">ADD TO CART</a>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}

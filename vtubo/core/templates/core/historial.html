@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="historial-compra">
+    <h1 class=" ">Mis compras</h1>
+    <div class="detalles-compras">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>FECHA</th>
+            <th>TOTAL</th>
+            <th>ESTADO</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for fila in compras %}
+            <tr>
+              <td>{{ fila.id }}</td>
+              <td>{{ fila.fecha }}</td>
+              <td>${{ fila.total }}</td>
+              <td>{{ fila.estado }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if not compras %}
+      <div id="Mensaje-compras-hechas">
+        <h2>Aún no hay compras realizadas!.</h2>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+  {% if carro %}
+    <section class="Carro-compra">
+      <div class="titulos-carritos">
+        <h1 class="tituloC">CARRITO</h1>
+        <h1 class="tituloD">Datos de envío</h1>
+      </div>
+      <div class="info-carrito">
+        <div class="contenedor-tabla scrollbar-personalizado">
+          <table>
+            <tbody>
+              {% for item in carro %}
+                <tr>
+                  <td>
+                    <a href="{% url 'dropitem' item.0 %}"><img src="{% static 'images/icons8_eraser_30px.png' %}" alt="" /></a>
+                  </td>
+                  <td>
+                    <p3>{{ item.4 }}</p3>
+                  </td>
+                  <td>
+                    <p2>${{ item.3 }}</p2>
+                  </td>
+                  <td>
+                    <p1>{{ item.1 }}</p1>
+                  </td>
+                  <td>
+                    <img src="{{ item.2 }}" alt="" />
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <div class="total-carrito">
+            <hr />
+            <p5>Total: ${{ request.session.total }}</p5>
+          </div>
+        </div>
+        <div class="datos-envio">
+          <div class="info-envio">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim v</p>
+            <p>0000000404</p>
+            <p>+56 952548528</p>
+          </div>
+        </div>
+      </div>
+      <div class="comprar">
+        <a href="{% url 'comprar' %}">PAGAR</a>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if not carro %}
+    <div id="Mensaje-carrito">
+      <h2>Tu carrito esta vacio!.</h2>
+    </div>
+  {% endif %}
+{% endblock %}

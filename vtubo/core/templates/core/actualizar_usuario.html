@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <section>
+    <form method="post">
+      <h1 class="tituloR">Datos de usuario</h1>
+      {% csrf_token %}
+      <div class="actualizar-usuario">
+        {{ form.username }}
+        {{ form.first_name }}
+        {{ form.last_name }}
+        {{ form.email }}</div>
+      <button id="actualizar" type="submit" class="btn btn-success">MODIFICAR DATOS</button>
+    </form>
+    {% if messages %}
+      <div class="alert alert-success">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

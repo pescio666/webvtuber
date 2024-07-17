@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="Historial-ventas">
+    <h1 class="titulo-histo-ventas">{{ user.username }}</h1>
+    <div class="info-ventas">
+      <table>
+        <tbody>
+          <p>Pedidos en curso</p>
+          {% for venta in ventas %}
+            <tr>
+              <td>{{ venta.id }} - {{ venta.cliente.email }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if not ventas %}
+      <div id="Mensaje-venta">
+        <h2>Aún no hay ventas realizadas!.</h2>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

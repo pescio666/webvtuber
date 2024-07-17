@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="contenedor-principal">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="img-carousel1" src="{% static 'images/INTRO.png' %}" alt="Intro" />
+        </div>
+        <div class="carousel-item">
+          <img class="img-carousel2" src="{% static 'images/Shouko.png' %}" alt="Intro" />
+        </div>
+        <div class="carousel-item">
+          <img class="img-carousel3" src="{% static 'images/Moeleto.jfif' %}" alt="Intro" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="adicional-principal">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="imagenes-rellenos">
+        <img src="{% static 'images/KotoneAsahi.jfif' %}" alt="" />
+        <img src="{% static 'images/Shouko.png' %}" alt="" />
+        <img src="{% static 'images/Moeleto.jfif' %}" alt="" />
+      </div>
+    </div>
+  </div>
+{% endblock %}
